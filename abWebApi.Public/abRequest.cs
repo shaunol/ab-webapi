@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace abWebapi
+namespace abWebapi.Public
 {
     /*
         {
@@ -12,7 +12,7 @@ namespace abWebapi
     */
     public class abRequest
     {
-        public DateTimeOffset? SheduledDate { get; set; }
+        public DateTime? SheduledDate { get; set; }
         public Uri Uri { get; set; }
         public int Requests { get; set; }
         public int Concurrency { get; set; }

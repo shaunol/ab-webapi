@@ -7,8 +7,8 @@
     <ProjectGuid>{8567CD3F-9D4F-4CAF-A2A9-BCDE1F416BAE}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ab-webapi</RootNamespace>
-    <AssemblyName>ab-webapi</AssemblyName>
+    <RootNamespace>abWebApi</RootNamespace>
+    <AssemblyName>abWebApi</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -69,8 +69,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="abRequest.cs" />
-    <Compile Include="abRunner.cs" />
+    <Compile Include="abRunner\abRunner.cs" />
+    <Compile Include="abRunner\abRunnerResult.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -79,6 +79,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\abWebApi.Public\abWebApi.Public.csproj">
+      <Project>{20b79853-74dc-45b9-ada4-9b95422aa585}</Project>
+      <Name>abWebApi.Public</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

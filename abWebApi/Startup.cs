@@ -1,4 +1,8 @@
-﻿using System.Web.Http;
+﻿using System.Linq;
+using System.Net.Http.Headers;
+using System.Web.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Owin;
 
 namespace abWebapi
@@ -10,12 +14,15 @@ namespace abWebapi
         public void Configuration(IAppBuilder appBuilder)
         {
             // Configure Web API for self-host. 
-            HttpConfiguration config = new HttpConfiguration();
+            var config = new HttpConfiguration();
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "{controller}/{id}",
                 defaults: new {id = RouteParameter.Optional}
                 );
+
+            //config.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new IsoDateTimeConverter());
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 
             appBuilder.UseWebApi(config);
         }
